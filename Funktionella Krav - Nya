@@ -2,3 +2,6 @@ Krav för tandvård program:
 
 Icke-funktionella:
 1. Databas ska kopplas till programmet.
+2. System ska vara uppe 24/7.
+3. Lätt att lära sig.
+4. Webb baserat.
