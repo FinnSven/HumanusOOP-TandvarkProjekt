@@ -1,12 +1,15 @@
 Krav
 
-- databas för kunder
-	namn adress personnummer, medicinsk historik (tänder, allmän medicinsk), röntgenbilder 3D, full historik av tandläkarbesöken
+- Databas fÃ¶r kunder:
+	âˆ™ namn adress personnummer
+	âˆ™ medicinsk historik (tÃ¤nder, allmÃ¤n medicinsk)
+	âˆ™ rÃ¶ntgenbilder 3D
+	âˆ™ full historik av tandlÃ¤karbesÃ¶ken
 
--  Inloggning (tid för in- o utloggning, raster.)
-	två olika
-		- receptionist - boka tid för besök, ändra/avboka, historik av tidigare besök. Betalmetod (Försäkring?), 
-				uppdatering av besökshistorik. Möjlighet att göra en notis (anteckning) i patientens logg/profil.
-		- tandläkare - (alla funktioner som receptionist har förutom betalning?), möjlighet att kunna se fullständig
-				tandhistorik (vad som är gjort, när o var), kunna se all medicin som patienten har använt (tandrelaterat). 
+-  Inloggning (tid fÃ¶r in- o utloggning, raster.)
+	tvÃ¥ olika:
+		- receptionist - boka tid fÃ¶r besÃ¶k, Ã¤ndra/avboka, historik av tidigare besÃ¶k. Betalmetod (FÃ¶rsÃ¤kring?), 
+				uppdatering av besÃ¶kshistorik. MÃ¶jlighet att gÃ¶ra en notis (anteckning) i patientens logg/profil.
+		- tandlÃ¤kare - (alla funktioner som receptionist har fÃ¶rutom betalning?), mÃ¶jlighet att kunna se fullstÃ¤ndig
+				tandhistorik (vad som Ã¤r gjort, nÃ¤r o var), kunna se all medicin som patienten har anvÃ¤nt (tandrelaterat). 
 				
