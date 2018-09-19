@@ -1,4 +1,4 @@
 Krav för tandvård program:
 
 Icke-funktionella:
-1. Lösenord skall vara krypterat
+1. Databas ska kopplas till programmet.
