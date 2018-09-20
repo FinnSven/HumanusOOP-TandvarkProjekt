@@ -16,5 +16,10 @@ namespace TandVerk
         {
             InitializeComponent();
         }
+
+        private void bokaTid_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
