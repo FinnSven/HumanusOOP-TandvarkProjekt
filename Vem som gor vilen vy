@@ -4,10 +4,10 @@ Inloggningsvy
         ÄndraKontoVy (görs av annan grupp)
         BokningsVy
         
-        TandläkarVy
-            PatientVy
-               RöntgenbildVy
-               HistorikVy
+        TandläkarVy   KLART
+            PatientVy   KLART
+               RöntgenbildVy   KLART
+               HistorikVy   KLART
 
 
 
@@ -26,6 +26,3 @@ Veronica -TandläkarVy, Inloggningsvy (6 vyer)
 Björn - ReceptionistVy (5 vyer)
 Jamie -TandläkarVy, Inloggningsvy (6 vyer)
 Marco - ReceptionistVy (5 vyer)
-
-Fardiga vyer: inga färdiga än.
-
