@@ -2,7 +2,7 @@ Inloggningsvy   KLART
 
         SkapaKontoVy (görs av annan grupp)
         ÄndraKontoVy (görs av annan grupp)
-        BokningsVy
+        BokningsVy (görs av annan grupp)
         
         TandläkarVy   KLART
             PatientVy   KLART
@@ -11,12 +11,12 @@ Inloggningsvy   KLART
 
 
 
-    ReceptionistVy
+    ReceptionistVy   KLAR
 
-        BetalningsVy
-        BokningsVy
-        SkapaKontoVy
-        ÄndraKontoVy
+        BetalningsVy   KLAR
+        BokningsVy   KLAR
+        SkapaKontoVy   KLAR
+        ÄndraKontoVy   KLAR
 
 
 
