@@ -1,3 +1,28 @@
+Namn - Vy
+
+
+Inloggningsvy
+
+        SkapaKontoVy
+        ÄndraKontoVy
+        BokningsVy
+        TandläkarVy
+        PatientVy
+            RöntgenbildVy
+            HistorikVy
+
+
+
+    ReceptionistVy
+
+        HistorikVy
+        BetalningsVy
+        BokningsVy
+        SkapaKontoVy
+        ÄndraKontoVy
+
+
+
 Pavle -
 Ted -
 Veronica -
