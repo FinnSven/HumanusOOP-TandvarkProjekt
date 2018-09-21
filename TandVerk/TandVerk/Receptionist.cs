@@ -98,5 +98,26 @@ namespace TandVerk
         {
             panelTaBortPatient.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panelÄndraUppgifter.Hide();
+        }
+
+        private void ändraUppgifter_Click(object sender, EventArgs e)
+        {
+            panelÄndraUppgifter.Show();
+        
+        }
+
+        private void betalning_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelÄndraUppgifter_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

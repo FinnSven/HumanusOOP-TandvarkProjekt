@@ -73,6 +73,18 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.panelÄndraUppgifter = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
             this.tabReceptionist.SuspendLayout();
             this.tabBokaTid.SuspendLayout();
             this.panelAngePersonnummer.SuspendLayout();
@@ -83,6 +95,7 @@
             this.tabBetalning.SuspendLayout();
             this.panelÄndraTid.SuspendLayout();
             this.panelTaBortPatient.SuspendLayout();
+            this.panelÄndraUppgifter.SuspendLayout();
             this.SuspendLayout();
             // 
             // läggTillPatient
@@ -134,6 +147,7 @@
             this.ändraUppgifter.TabIndex = 3;
             this.ändraUppgifter.Text = "Ändra Uppgifter";
             this.ändraUppgifter.UseVisualStyleBackColor = true;
+            this.ändraUppgifter.Click += new System.EventHandler(this.ändraUppgifter_Click);
             // 
             // betalning
             // 
@@ -144,6 +158,7 @@
             this.betalning.TabIndex = 4;
             this.betalning.Text = "Betalning";
             this.betalning.UseVisualStyleBackColor = true;
+            this.betalning.Click += new System.EventHandler(this.betalning_Click);
             // 
             // taBortKund
             // 
@@ -331,6 +346,11 @@
             // 
             // tabÄndraPatientUppgifter
             // 
+            this.tabÄndraPatientUppgifter.Controls.Add(this.panelÄndraUppgifter);
+            this.tabÄndraPatientUppgifter.Controls.Add(this.textBox12);
+            this.tabÄndraPatientUppgifter.Controls.Add(this.textBox13);
+            this.tabÄndraPatientUppgifter.Controls.Add(this.textBox14);
+            this.tabÄndraPatientUppgifter.Controls.Add(this.textBox15);
             this.tabÄndraPatientUppgifter.Controls.Add(this.ändraUppgifter);
             this.tabÄndraPatientUppgifter.Location = new System.Drawing.Point(4, 25);
             this.tabÄndraPatientUppgifter.Name = "tabÄndraPatientUppgifter";
@@ -342,6 +362,10 @@
             // 
             // tabLäggTillPatient
             // 
+            this.tabLäggTillPatient.Controls.Add(this.textBox16);
+            this.tabLäggTillPatient.Controls.Add(this.textBox17);
+            this.tabLäggTillPatient.Controls.Add(this.textBox18);
+            this.tabLäggTillPatient.Controls.Add(this.textBox19);
             this.tabLäggTillPatient.Controls.Add(this.läggTillPatient);
             this.tabLäggTillPatient.Location = new System.Drawing.Point(4, 25);
             this.tabLäggTillPatient.Name = "tabLäggTillPatient";
@@ -383,7 +407,7 @@
             this.panelÄndraTid.Controls.Add(this.maskedTextBox2);
             this.panelÄndraTid.Location = new System.Drawing.Point(9, 6);
             this.panelÄndraTid.Name = "panelÄndraTid";
-            this.panelÄndraTid.Size = new System.Drawing.Size(937, 368);
+            this.panelÄndraTid.Size = new System.Drawing.Size(941, 398);
             this.panelÄndraTid.TabIndex = 2;
             this.panelÄndraTid.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -548,6 +572,107 @@
             this.textBox10.TabIndex = 9;
             this.textBox10.Text = "Patientens Adress";
             // 
+            // panelÄndraUppgifter
+            // 
+            this.panelÄndraUppgifter.Controls.Add(this.button3);
+            this.panelÄndraUppgifter.Controls.Add(this.textBox11);
+            this.panelÄndraUppgifter.Controls.Add(this.maskedTextBox4);
+            this.panelÄndraUppgifter.Location = new System.Drawing.Point(0, 0);
+            this.panelÄndraUppgifter.Name = "panelÄndraUppgifter";
+            this.panelÄndraUppgifter.Size = new System.Drawing.Size(947, 401);
+            this.panelÄndraUppgifter.TabIndex = 4;
+            this.panelÄndraUppgifter.Paint += new System.Windows.Forms.PaintEventHandler(this.panelÄndraUppgifter_Paint);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(679, 175);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "OK";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(193, 176);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(216, 22);
+            this.textBox11.TabIndex = 10;
+            this.textBox11.Text = "Ange Personnummer 10 siffror";
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Location = new System.Drawing.Point(473, 175);
+            this.maskedTextBox4.Mask = "0000000000";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBox4.TabIndex = 9;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(46, 201);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(171, 22);
+            this.textBox12.TabIndex = 14;
+            this.textBox12.Text = "Patientens Tel. nummer";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(46, 147);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(171, 22);
+            this.textBox13.TabIndex = 13;
+            this.textBox13.Text = "Patientens Adress";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(46, 84);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(171, 22);
+            this.textBox14.TabIndex = 12;
+            this.textBox14.Text = "Patientens Personnummer";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(46, 30);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(171, 22);
+            this.textBox15.TabIndex = 11;
+            this.textBox15.Text = "Patientens Namn";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(44, 203);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(171, 22);
+            this.textBox16.TabIndex = 18;
+            this.textBox16.Text = "Patientens Tel. nummer";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(44, 149);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(171, 22);
+            this.textBox17.TabIndex = 17;
+            this.textBox17.Text = "Patientens Adress";
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(44, 86);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(171, 22);
+            this.textBox18.TabIndex = 16;
+            this.textBox18.Text = "Patientens Personnummer";
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(44, 32);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(171, 22);
+            this.textBox19.TabIndex = 15;
+            this.textBox19.Text = "Patientens Namn";
+            // 
             // Receptionist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -568,12 +693,16 @@
             this.tabTaBortKund.ResumeLayout(false);
             this.tabTaBortKund.PerformLayout();
             this.tabÄndraPatientUppgifter.ResumeLayout(false);
+            this.tabÄndraPatientUppgifter.PerformLayout();
             this.tabLäggTillPatient.ResumeLayout(false);
+            this.tabLäggTillPatient.PerformLayout();
             this.tabBetalning.ResumeLayout(false);
             this.panelÄndraTid.ResumeLayout(false);
             this.panelÄndraTid.PerformLayout();
             this.panelTaBortPatient.ResumeLayout(false);
             this.panelTaBortPatient.PerformLayout();
+            this.panelÄndraUppgifter.ResumeLayout(false);
+            this.panelÄndraUppgifter.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -625,5 +754,17 @@
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Panel panelÄndraUppgifter;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox textBox19;
     }
 }
