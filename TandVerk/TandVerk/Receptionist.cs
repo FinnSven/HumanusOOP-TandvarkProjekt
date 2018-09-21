@@ -20,6 +20,7 @@ namespace TandVerk
         private void bokaTid_Click(object sender, EventArgs e)
         {
             panelAngePersonnummer.Show();
+
         
         }
 
@@ -60,6 +61,30 @@ namespace TandVerk
         }
 
         private void tabReceptionist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            panelÄndraTid.Hide();
+           
+
+
+        }
+
+        private void ändraBokning_Click(object sender, EventArgs e)
+        {
+            panelÄndraTid.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

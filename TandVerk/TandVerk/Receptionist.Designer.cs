@@ -53,6 +53,18 @@
             this.tabBetalning = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panelÄndraTid = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.tabReceptionist.SuspendLayout();
             this.tabBokaTid.SuspendLayout();
             this.panelAngePersonnummer.SuspendLayout();
@@ -61,6 +73,7 @@
             this.tabÄndraPatientUppgifter.SuspendLayout();
             this.tabLäggTillPatient.SuspendLayout();
             this.tabBetalning.SuspendLayout();
+            this.panelÄndraTid.SuspendLayout();
             this.SuspendLayout();
             // 
             // läggTillPatient
@@ -80,12 +93,13 @@
             this.ändraBokning.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ändraBokning.Location = new System.Drawing.Point(569, 235);
+            this.ändraBokning.Location = new System.Drawing.Point(660, 234);
             this.ändraBokning.Name = "ändraBokning";
             this.ändraBokning.Size = new System.Drawing.Size(280, 153);
             this.ändraBokning.TabIndex = 1;
             this.ändraBokning.Text = "Ändra Bokning";
             this.ändraBokning.UseVisualStyleBackColor = true;
+            this.ändraBokning.Click += new System.EventHandler(this.ändraBokning_Click);
             // 
             // bokaTid
             // 
@@ -152,6 +166,7 @@
             // tabBokaTid
             // 
             this.tabBokaTid.Controls.Add(this.panelAngePersonnummer);
+            this.tabBokaTid.Controls.Add(this.dateTimePicker1);
             this.tabBokaTid.Controls.Add(this.label2);
             this.tabBokaTid.Controls.Add(this.label1);
             this.tabBokaTid.Controls.Add(this.checkedListBox2);
@@ -234,7 +249,7 @@
             this.panelAngePersonnummer.Controls.Add(this.buttonOK);
             this.panelAngePersonnummer.Controls.Add(this.textBoxPersonnumer);
             this.panelAngePersonnummer.Controls.Add(this.maskedTextBox1);
-            this.panelAngePersonnummer.Location = new System.Drawing.Point(3, 11);
+            this.panelAngePersonnummer.Location = new System.Drawing.Point(7, 11);
             this.panelAngePersonnummer.Name = "panelAngePersonnummer";
             this.panelAngePersonnummer.Size = new System.Drawing.Size(947, 373);
             this.panelAngePersonnummer.TabIndex = 3;
@@ -270,6 +285,14 @@
             // 
             // tabÄndraBokning
             // 
+            this.tabÄndraBokning.Controls.Add(this.panelÄndraTid);
+            this.tabÄndraBokning.Controls.Add(this.dateTimePicker2);
+            this.tabÄndraBokning.Controls.Add(this.label3);
+            this.tabÄndraBokning.Controls.Add(this.label4);
+            this.tabÄndraBokning.Controls.Add(this.checkedListBox3);
+            this.tabÄndraBokning.Controls.Add(this.checkedListBox4);
+            this.tabÄndraBokning.Controls.Add(this.textBox4);
+            this.tabÄndraBokning.Controls.Add(this.textBox5);
             this.tabÄndraBokning.Controls.Add(this.ändraBokning);
             this.tabÄndraBokning.Location = new System.Drawing.Point(4, 25);
             this.tabÄndraBokning.Name = "tabÄndraBokning";
@@ -330,6 +353,118 @@
             this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
             this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(347, 176);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // panelÄndraTid
+            // 
+            this.panelÄndraTid.Controls.Add(this.button1);
+            this.panelÄndraTid.Controls.Add(this.textBox3);
+            this.panelÄndraTid.Controls.Add(this.maskedTextBox2);
+            this.panelÄndraTid.Location = new System.Drawing.Point(9, 19);
+            this.panelÄndraTid.Name = "panelÄndraTid";
+            this.panelÄndraTid.Size = new System.Drawing.Size(937, 368);
+            this.panelÄndraTid.TabIndex = 2;
+            this.panelÄndraTid.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(506, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(20, 67);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(216, 22);
+            this.textBox3.TabIndex = 4;
+            this.textBox3.Text = "Ange Personnummer 10 siffror";
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(300, 66);
+            this.maskedTextBox2.Mask = "0000000000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBox2.TabIndex = 3;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(338, 166);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 265);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Tankläkarlista";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 17);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Typ Av Besök";
+            // 
+            // checkedListBox3
+            // 
+            this.checkedListBox3.FormattingEnabled = true;
+            this.checkedListBox3.Items.AddRange(new object[] {
+            "Marko",
+            "Björn",
+            "Pavle",
+            "Jamie",
+            "Ted"});
+            this.checkedListBox3.Location = new System.Drawing.Point(22, 285);
+            this.checkedListBox3.Name = "checkedListBox3";
+            this.checkedListBox3.Size = new System.Drawing.Size(120, 89);
+            this.checkedListBox3.TabIndex = 14;
+            // 
+            // checkedListBox4
+            // 
+            this.checkedListBox4.FormattingEnabled = true;
+            this.checkedListBox4.Items.AddRange(new object[] {
+            "Operation",
+            "Plombering",
+            "Undersökning"});
+            this.checkedListBox4.Location = new System.Drawing.Point(22, 166);
+            this.checkedListBox4.Name = "checkedListBox4";
+            this.checkedListBox4.Size = new System.Drawing.Size(138, 55);
+            this.checkedListBox4.TabIndex = 13;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(22, 89);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(171, 22);
+            this.textBox4.TabIndex = 12;
+            this.textBox4.Text = "Patientens Personnummer";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(22, 35);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(171, 22);
+            this.textBox5.TabIndex = 11;
+            this.textBox5.Text = "Patientens Namn";
+            // 
             // Receptionist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -346,10 +481,13 @@
             this.panelAngePersonnummer.ResumeLayout(false);
             this.panelAngePersonnummer.PerformLayout();
             this.tabÄndraBokning.ResumeLayout(false);
+            this.tabÄndraBokning.PerformLayout();
             this.tabTaBortKund.ResumeLayout(false);
             this.tabÄndraPatientUppgifter.ResumeLayout(false);
             this.tabLäggTillPatient.ResumeLayout(false);
             this.tabBetalning.ResumeLayout(false);
+            this.panelÄndraTid.ResumeLayout(false);
+            this.panelÄndraTid.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -381,5 +519,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Panel panelÄndraTid;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckedListBox checkedListBox3;
+        private System.Windows.Forms.CheckedListBox checkedListBox4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
