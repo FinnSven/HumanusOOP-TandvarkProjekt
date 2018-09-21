@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabDentistView = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.PatientSearch = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -39,7 +39,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabXrayView = new System.Windows.Forms.TabPage();
             this.MainXraypic = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.xrayRondell = new System.Windows.Forms.PictureBox();
@@ -48,44 +48,50 @@
             this.SecondXRpicLabel = new System.Windows.Forms.Label();
             this.xRayViewPaitentName = new System.Windows.Forms.Label();
             this.xRayRondellLabel = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabHistoryView = new System.Windows.Forms.TabPage();
+            this.patientSearchPanel = new System.Windows.Forms.Panel();
+            this.Searchbox = new System.Windows.Forms.TextBox();
+            this.searchPanelButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabDentistView.SuspendLayout();
+            this.tabXrayView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainXraypic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrayRondell)).BeginInit();
+            this.patientSearchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabDentistView);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabXrayView);
+            this.tabControl1.Controls.Add(this.tabHistoryView);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1128, 542);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // tabDentistView
             // 
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.dateTimePicker2);
-            this.tabPage1.Controls.Add(this.dateTimePicker1);
-            this.tabPage1.Controls.Add(this.monthCalendar1);
-            this.tabPage1.Controls.Add(this.PatientSearch);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1120, 516);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Dentist View";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabDentistView.Controls.Add(this.label2);
+            this.tabDentistView.Controls.Add(this.textBox2);
+            this.tabDentistView.Controls.Add(this.textBox1);
+            this.tabDentistView.Controls.Add(this.label1);
+            this.tabDentistView.Controls.Add(this.dateTimePicker2);
+            this.tabDentistView.Controls.Add(this.dateTimePicker1);
+            this.tabDentistView.Controls.Add(this.monthCalendar1);
+            this.tabDentistView.Controls.Add(this.PatientSearch);
+            this.tabDentistView.Controls.Add(this.patientSearchPanel);
+            this.tabDentistView.Location = new System.Drawing.Point(4, 22);
+            this.tabDentistView.Name = "tabDentistView";
+            this.tabDentistView.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDentistView.Size = new System.Drawing.Size(1120, 516);
+            this.tabDentistView.TabIndex = 0;
+            this.tabDentistView.Text = "Dentist View";
+            this.tabDentistView.UseVisualStyleBackColor = true;
+            this.tabDentistView.Click += new System.EventHandler(this.tabDentistView_Click);
             // 
             // tabPage2
             // 
@@ -107,6 +113,7 @@
             this.PatientSearch.TabIndex = 0;
             this.PatientSearch.Text = "Patient Search";
             this.PatientSearch.UseVisualStyleBackColor = false;
+            this.PatientSearch.Click += new System.EventHandler(this.PatientSearch_Click);
             // 
             // monthCalendar1
             // 
@@ -165,23 +172,23 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Other Notices";
             // 
-            // tabPage3
+            // tabXrayView
             // 
-            this.tabPage3.Controls.Add(this.xRayRondellLabel);
-            this.tabPage3.Controls.Add(this.xRayViewPaitentName);
-            this.tabPage3.Controls.Add(this.SecondXRpicLabel);
-            this.tabPage3.Controls.Add(this.MainXRpiclabel);
-            this.tabPage3.Controls.Add(this.directoryOfPatientXray);
-            this.tabPage3.Controls.Add(this.xrayRondell);
-            this.tabPage3.Controls.Add(this.pictureBox2);
-            this.tabPage3.Controls.Add(this.MainXraypic);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1120, 516);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "X Ray View";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabXrayView.Controls.Add(this.xRayRondellLabel);
+            this.tabXrayView.Controls.Add(this.xRayViewPaitentName);
+            this.tabXrayView.Controls.Add(this.SecondXRpicLabel);
+            this.tabXrayView.Controls.Add(this.MainXRpiclabel);
+            this.tabXrayView.Controls.Add(this.directoryOfPatientXray);
+            this.tabXrayView.Controls.Add(this.xrayRondell);
+            this.tabXrayView.Controls.Add(this.pictureBox2);
+            this.tabXrayView.Controls.Add(this.MainXraypic);
+            this.tabXrayView.Location = new System.Drawing.Point(4, 22);
+            this.tabXrayView.Name = "tabXrayView";
+            this.tabXrayView.Padding = new System.Windows.Forms.Padding(3);
+            this.tabXrayView.Size = new System.Drawing.Size(1120, 516);
+            this.tabXrayView.TabIndex = 2;
+            this.tabXrayView.Text = "X Ray View";
+            this.tabXrayView.UseVisualStyleBackColor = true;
             // 
             // MainXraypic
             // 
@@ -255,15 +262,45 @@
             this.xRayRondellLabel.TabIndex = 7;
             this.xRayRondellLabel.Text = "X Ray Rondell";
             // 
-            // tabPage4
+            // tabHistoryView
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1120, 516);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabHistoryView.Location = new System.Drawing.Point(4, 22);
+            this.tabHistoryView.Name = "tabHistoryView";
+            this.tabHistoryView.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHistoryView.Size = new System.Drawing.Size(1120, 516);
+            this.tabHistoryView.TabIndex = 3;
+            this.tabHistoryView.Text = "History";
+            this.tabHistoryView.UseVisualStyleBackColor = true;
+            // 
+            // patientSearchPanel
+            // 
+            this.patientSearchPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.patientSearchPanel.Controls.Add(this.searchPanelButton);
+            this.patientSearchPanel.Controls.Add(this.Searchbox);
+            this.patientSearchPanel.Location = new System.Drawing.Point(592, 62);
+            this.patientSearchPanel.Name = "patientSearchPanel";
+            this.patientSearchPanel.Size = new System.Drawing.Size(200, 100);
+            this.patientSearchPanel.TabIndex = 8;
+            this.patientSearchPanel.Visible = false;
+            this.patientSearchPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.patientSearchPanel_Paint);
+            // 
+            // Searchbox
+            // 
+            this.Searchbox.Location = new System.Drawing.Point(30, 19);
+            this.Searchbox.Name = "Searchbox";
+            this.Searchbox.Size = new System.Drawing.Size(134, 20);
+            this.Searchbox.TabIndex = 0;
+            this.Searchbox.Text = "Insert Perssonummer";
+            // 
+            // searchPanelButton
+            // 
+            this.searchPanelButton.Location = new System.Drawing.Point(60, 62);
+            this.searchPanelButton.Name = "searchPanelButton";
+            this.searchPanelButton.Size = new System.Drawing.Size(75, 23);
+            this.searchPanelButton.TabIndex = 1;
+            this.searchPanelButton.Text = "OK";
+            this.searchPanelButton.UseVisualStyleBackColor = true;
+            this.searchPanelButton.Click += new System.EventHandler(this.searchPanelButton_Click);
             // 
             // Dentist
             // 
@@ -274,13 +311,15 @@
             this.Name = "Dentist";
             this.Text = "Dentist";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tabDentistView.ResumeLayout(false);
+            this.tabDentistView.PerformLayout();
+            this.tabXrayView.ResumeLayout(false);
+            this.tabXrayView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainXraypic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrayRondell)).EndInit();
+            this.patientSearchPanel.ResumeLayout(false);
+            this.patientSearchPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -288,7 +327,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabDentistView;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -298,7 +337,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabXrayView;
         private System.Windows.Forms.Label SecondXRpicLabel;
         private System.Windows.Forms.Label MainXRpiclabel;
         private System.Windows.Forms.ListBox directoryOfPatientXray;
@@ -307,6 +346,9 @@
         private System.Windows.Forms.PictureBox MainXraypic;
         private System.Windows.Forms.Label xRayViewPaitentName;
         private System.Windows.Forms.Label xRayRondellLabel;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabHistoryView;
+        private System.Windows.Forms.Panel patientSearchPanel;
+        private System.Windows.Forms.TextBox Searchbox;
+        private System.Windows.Forms.Button searchPanelButton;
     }
 }
