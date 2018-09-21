@@ -88,5 +88,15 @@ namespace TandVerk
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelTaBortPatient.Hide();
+        }
+
+        private void taBortKund_Click(object sender, EventArgs e)
+        {
+            panelTaBortPatient.Show();
+        }
     }
 }

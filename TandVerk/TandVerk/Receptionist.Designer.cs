@@ -65,6 +65,14 @@
             this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.panelTaBortPatient = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.tabReceptionist.SuspendLayout();
             this.tabBokaTid.SuspendLayout();
             this.panelAngePersonnummer.SuspendLayout();
@@ -74,6 +82,7 @@
             this.tabLäggTillPatient.SuspendLayout();
             this.tabBetalning.SuspendLayout();
             this.panelÄndraTid.SuspendLayout();
+            this.panelTaBortPatient.SuspendLayout();
             this.SuspendLayout();
             // 
             // läggTillPatient
@@ -147,6 +156,7 @@
             this.taBortKund.TabIndex = 5;
             this.taBortKund.Text = "Ta Bort Kund";
             this.taBortKund.UseVisualStyleBackColor = true;
+            this.taBortKund.Click += new System.EventHandler(this.taBortKund_Click);
             // 
             // tabReceptionist
             // 
@@ -249,9 +259,9 @@
             this.panelAngePersonnummer.Controls.Add(this.buttonOK);
             this.panelAngePersonnummer.Controls.Add(this.textBoxPersonnumer);
             this.panelAngePersonnummer.Controls.Add(this.maskedTextBox1);
-            this.panelAngePersonnummer.Location = new System.Drawing.Point(7, 11);
+            this.panelAngePersonnummer.Location = new System.Drawing.Point(3, 3);
             this.panelAngePersonnummer.Name = "panelAngePersonnummer";
-            this.panelAngePersonnummer.Size = new System.Drawing.Size(947, 373);
+            this.panelAngePersonnummer.Size = new System.Drawing.Size(947, 398);
             this.panelAngePersonnummer.TabIndex = 3;
             this.panelAngePersonnummer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAngePersonnummer_Paint);
             // 
@@ -305,6 +315,11 @@
             // 
             // tabTaBortKund
             // 
+            this.tabTaBortKund.Controls.Add(this.panelTaBortPatient);
+            this.tabTaBortKund.Controls.Add(this.textBox9);
+            this.tabTaBortKund.Controls.Add(this.textBox10);
+            this.tabTaBortKund.Controls.Add(this.textBox7);
+            this.tabTaBortKund.Controls.Add(this.textBox8);
             this.tabTaBortKund.Controls.Add(this.taBortKund);
             this.tabTaBortKund.Location = new System.Drawing.Point(4, 25);
             this.tabTaBortKund.Name = "tabTaBortKund";
@@ -366,7 +381,7 @@
             this.panelÄndraTid.Controls.Add(this.button1);
             this.panelÄndraTid.Controls.Add(this.textBox3);
             this.panelÄndraTid.Controls.Add(this.maskedTextBox2);
-            this.panelÄndraTid.Location = new System.Drawing.Point(9, 19);
+            this.panelÄndraTid.Location = new System.Drawing.Point(9, 6);
             this.panelÄndraTid.Name = "panelÄndraTid";
             this.panelÄndraTid.Size = new System.Drawing.Size(937, 368);
             this.panelÄndraTid.TabIndex = 2;
@@ -465,6 +480,74 @@
             this.textBox5.TabIndex = 11;
             this.textBox5.Text = "Patientens Namn";
             // 
+            // panelTaBortPatient
+            // 
+            this.panelTaBortPatient.Controls.Add(this.button2);
+            this.panelTaBortPatient.Controls.Add(this.textBox6);
+            this.panelTaBortPatient.Controls.Add(this.maskedTextBox3);
+            this.panelTaBortPatient.Location = new System.Drawing.Point(3, 3);
+            this.panelTaBortPatient.Name = "panelTaBortPatient";
+            this.panelTaBortPatient.Size = new System.Drawing.Size(937, 398);
+            this.panelTaBortPatient.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(677, 172);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "OK";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(191, 173);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(216, 22);
+            this.textBox6.TabIndex = 7;
+            this.textBox6.Text = "Ange Personnummer 10 siffror";
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(471, 172);
+            this.maskedTextBox3.Mask = "0000000000";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBox3.TabIndex = 6;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(20, 82);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(171, 22);
+            this.textBox7.TabIndex = 8;
+            this.textBox7.Text = "Patientens Personnummer";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(20, 28);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(171, 22);
+            this.textBox8.TabIndex = 7;
+            this.textBox8.Text = "Patientens Namn";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(20, 199);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(171, 22);
+            this.textBox9.TabIndex = 10;
+            this.textBox9.Text = "Patientens Tel. nummer";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(20, 145);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(171, 22);
+            this.textBox10.TabIndex = 9;
+            this.textBox10.Text = "Patientens Adress";
+            // 
             // Receptionist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -483,11 +566,14 @@
             this.tabÄndraBokning.ResumeLayout(false);
             this.tabÄndraBokning.PerformLayout();
             this.tabTaBortKund.ResumeLayout(false);
+            this.tabTaBortKund.PerformLayout();
             this.tabÄndraPatientUppgifter.ResumeLayout(false);
             this.tabLäggTillPatient.ResumeLayout(false);
             this.tabBetalning.ResumeLayout(false);
             this.panelÄndraTid.ResumeLayout(false);
             this.panelÄndraTid.PerformLayout();
+            this.panelTaBortPatient.ResumeLayout(false);
+            this.panelTaBortPatient.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -531,5 +617,13 @@
         private System.Windows.Forms.CheckedListBox checkedListBox4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Panel panelTaBortPatient;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }
