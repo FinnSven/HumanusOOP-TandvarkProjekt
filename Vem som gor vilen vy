@@ -1,22 +1,20 @@
-Inloggningsvy   KLART
+Ska göras i Windows Forms nu:
 
-        SkapaKontoVy (görs av annan grupp)
-        ÄndraKontoVy (görs av annan grupp)
-        BokningsVy (görs av annan grupp)
+Inloggningsvy
         
-        TandläkarVy   KLART
-            PatientVy   KLART
-               RöntgenbildVy   KLART
-               HistorikVy   KLART
+        TandläkarVy
+            PatientVy
+               RöntgenbildVy
+               HistorikVy
 
 
 
-    ReceptionistVy   KLAR
+    ReceptionistVy
 
-        BetalningsVy   KLAR
-        BokningsVy   KLAR
-        SkapaKontoVy   KLAR
-        ÄndraKontoVy   KLAR
+        BetalningsVy
+        BokningsVy
+        SkapaKontoVy
+        ÄndraKontoVy
 
 
 
