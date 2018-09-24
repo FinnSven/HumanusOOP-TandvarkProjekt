@@ -52,7 +52,7 @@ namespace TandVerk
         private void buttonOK_Click(object sender, EventArgs e)
         {
             panelAngePersonnummer.Hide();
-            maskedTextBox1.Text = textBox2.Text;
+            textBox2.Text = maskedTextBox1.Text;
         }
 
         private void tabBokaTid_Click(object sender, EventArgs e)
