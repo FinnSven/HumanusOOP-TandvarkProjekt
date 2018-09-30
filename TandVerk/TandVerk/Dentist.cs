@@ -16,5 +16,32 @@ namespace TandVerk
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            patientSearchPanel.Hide();
+            
+        }
+
+        private void PatientSearch_Click(object sender, EventArgs e)
+        {
+            patientSearchPanel.Show();
+        }
+
+        private void patientSearchPanel_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void searchPanelButton_Click(object sender, EventArgs e)
+        {
+            patientSearchPanel.Hide();
+            
+        }
+
+        private void tabDentistView_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
