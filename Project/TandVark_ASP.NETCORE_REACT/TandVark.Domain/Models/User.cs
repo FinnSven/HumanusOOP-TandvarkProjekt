@@ -7,17 +7,18 @@ namespace TandVark.Domain.Models
 {
     public class User : IUser
     {
-        private string userName { get; set; }
-        private string passWord { get; set; }
+        public string UserName { get; set; }
+        public string PassWord { get; set; }
 
         public User(string _userName, string _passWord)
         {
-            userName = _userName;
-            passWord = _passWord;
+            UserName = _userName;
+            PassWord = _passWord;
         }
-        public bool validateUser(string _passWord)
+        public User() { }
+        public bool validateUserPassWord(string _passWord)
         {
-            return passWord == _passWord;
+            return PassWord == _passWord;
         }
     }
 }

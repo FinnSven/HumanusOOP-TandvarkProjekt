@@ -10,30 +10,40 @@ namespace TandVark.Domain.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public List<IUser> GetAllCards()
+        public List<IUser> GetAllUsers()
         {
             using (var db = new CardDB())
             {
-                var _users = db.users();
-                return _users;
+                var _Users = db.Users();
+                return _Users;
             }
         }
-        public bool AuthenticateUser(IUser _user, string _userPass)
+        public bool AuthenticateUser(User _User)
         {
-            return _user != null ? _user.validateUser(_userPass) : false;
+            var AllUsers = GetAllUsers();
+            foreach(User U in AllUsers)
+            {
+                if (U.UserName == _User.UserName && U.PassWord == _User.PassWord )
+                {
+                    return true;
+                }
+
+            }
+            return false;
+
         }
     }
 
     public class CardDB : IDisposable
     {
-        public List<IUser> users() => new List<IUser>
+        public List<IUser> Users() => new List<IUser>
             {
                 new User("U1", "1234"),
                 new User("U2", "4321"),
                 new User("U3", "1111")
             };
 
-
+        
         public void Dispose()
         {
             Console.WriteLine("Disposing.");

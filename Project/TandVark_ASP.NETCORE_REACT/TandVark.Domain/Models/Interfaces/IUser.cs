@@ -2,6 +2,6 @@
 {
     public interface IUser
     {
-        bool validateUser(string _passWord);
+        bool validateUserPassWord(string _passWord);
     }
 }

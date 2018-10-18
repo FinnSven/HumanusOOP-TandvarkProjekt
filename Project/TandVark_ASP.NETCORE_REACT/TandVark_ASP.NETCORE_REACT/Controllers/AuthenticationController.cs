@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TandVark.Domain.Repositories.Interfaces;
 using TandVark.Domain.Models.Interfaces;
+using TandVark.Domain.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace TandVark_ASP.NETCORE_REACT.Controllers
@@ -19,11 +20,13 @@ namespace TandVark_ASP.NETCORE_REACT.Controllers
             _userRepository = userRepository;
         }
 
-        public UserAuthenticationResult AuthenticateUser(IUser _card, string _passWord)
+        [HttpPost]
+        [Route("{FromBody}")]
+        public UserAuthenticationResult AuthenticateUser([FromBody]User credentialsModel)
         {
             try
             {
-                var authenticated = _userRepository.AuthenticateUser(_card, _passWord);
+                var authenticated = _userRepository.AuthenticateUser(credentialsModel);
                 if (authenticated)
                     return new UserAuthenticationResult(authenticated, "Authenticated");
                 else

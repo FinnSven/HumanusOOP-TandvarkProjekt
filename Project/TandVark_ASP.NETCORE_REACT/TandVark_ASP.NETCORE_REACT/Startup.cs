@@ -25,7 +25,7 @@ namespace TandVark_ASP.NETCORE_REACT
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUser, User>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
