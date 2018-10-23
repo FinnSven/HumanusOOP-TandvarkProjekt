@@ -56,6 +56,7 @@ export class Dentist_Sub extends Component {
         this.handleLoginClick = this.handleLoginClick.bind(this);
         this.handleUserNameOnChange = this.handleUserNameOnChange.bind(this);
         this.handlePassWordOnChange = this.handlePassWordOnChange.bind(this);
+        this.handleCancelClick = this.handleCancelClick.bind(this);
 
     }
 
@@ -71,18 +72,23 @@ export class Dentist_Sub extends Component {
     handlePassWordOnChange(e) {
         this.setState({ passWord: e.target.value });
     }
-
+    handleCancelClick() {
+        this.setState({
+            userName: "",
+            passWord: ""
+        });
+    }
 
     render() {
 
         return (
             <div className="DSub">
 
-                <input type="text" onChange={this.handleUserNameOnChange}/>
-                <input type="text" onChange={this.handlePassWordOnChange}/>
+                <input type="text" value={this.state.userName} id="UserName" onChange={this.handleUserNameOnChange}/>
+                <input type="text" value={this.state.passWord} id="PassWord" onChange={this.handlePassWordOnChange}/>
 
                 <button onClick={this.handleLoginClick}>login</button>
-                <button>cancel</button>
+                <button onClick={this.handleCancelClick}>cancel</button>
             </div>
         );
     }
