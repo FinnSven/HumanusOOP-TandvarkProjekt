@@ -1,54 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TandVark.Domain.Models.Interfaces;
-using TandVark.Domain.Repositories.Interfaces;
-
-using TandVark.Domain.Models;
+﻿using TandVark.Domain.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using TandVark.Data.Data1;
 
 namespace TandVark.Domain.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public List<IUser> GetAllUsers()
+        private readonly TandVerkContext _tandVardContext;
+
+        public UserRepository(TandVerkContext tandVardContext)
         {
-            using (var db = new CardDB())
-            {
-                var _Users = db.Users();
-                return _Users;
-            }
+            _tandVardContext = tandVardContext;
         }
-        public bool AuthenticateUser(User _User)
+
+        public async Task<TblUser> GetUserAsync(string _userName)
         {
-            var AllUsers = GetAllUsers();
-            foreach(User U in AllUsers)
-            {
-                if (U.UserName == _User.UserName && U.PassWord == _User.PassWord )
-                {
-                    return true;
-                }
-
-            }
-            return false;
-
+            var value = await _tandVardContext.TblUsers.Include(e => e.FldUserType).
+                FirstOrDefaultAsync(table => table.FldAccountName.Equals(_userName));
+            return value;
         }
     }
 
-    public class CardDB : IDisposable
-    {
-        public List<IUser> Users() => new List<IUser>
-            {
-                new User("U1", "1234"),
-                new User("U2", "4321"),
-                new User("U3", "1111")
-            };
-
-        
-        public void Dispose()
-        {
-            Console.WriteLine("Disposing.");
-        }
-    }
+    
 }
 
 

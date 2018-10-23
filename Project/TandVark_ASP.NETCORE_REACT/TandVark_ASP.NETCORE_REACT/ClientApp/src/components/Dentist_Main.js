@@ -13,8 +13,8 @@ export class Dentist_Main extends Component {
         console.log(credentials[0].userName);
         console.log(credentials[0].passWord);
 
-        fetch("api/Authentication/AuthenticateUser", {
-            method: "post",
+        fetch("api/Authentication/AuthenticateUserAsync", {
+            method: "Post",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -24,14 +24,12 @@ export class Dentist_Main extends Component {
             body: JSON.stringify({
                 UserName: credentials[0].userName,
                 PassWord: credentials[0].passWord
-            })
+            }),
         })
-            .then((response) => {
-                console.log(response);
-                //do something awesome that makes the world a better place
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
             });
-        
-        console.log(credentials);
     }
 
     render() {

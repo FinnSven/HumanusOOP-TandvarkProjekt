@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TandVark.Domain.Models.Interfaces;
+﻿using TandVark.Domain.Models.Interfaces;
 
 namespace TandVark.Domain.Models
 {
@@ -9,6 +6,7 @@ namespace TandVark.Domain.Models
     {
         public string UserName { get; set; }
         public string PassWord { get; set; }
+        public string UserType { get; set; }
 
         public User(string _userName, string _passWord)
         {
@@ -16,9 +14,6 @@ namespace TandVark.Domain.Models
             PassWord = _passWord;
         }
         public User() { }
-        public bool validateUserPassWord(string _passWord)
-        {
-            return PassWord == _passWord;
-        }
+        
     }
 }
