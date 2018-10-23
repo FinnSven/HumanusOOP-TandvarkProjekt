@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-using TandVark.Domain.Models.Interfaces;
-using TandVark.Domain.Models;
-
+﻿using System.Threading.Tasks;
+using TandVark.Data.Data1;
 
 namespace TandVark.Domain.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-        List<IUser> GetAllUsers();
-        bool AuthenticateUser(User _User);
+        
+        Task<TblUser> GetUserAsync(string _userName);
     }
 }

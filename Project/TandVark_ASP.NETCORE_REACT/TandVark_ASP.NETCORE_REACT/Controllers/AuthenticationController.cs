@@ -3,54 +3,57 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using TandVark.Domain.Repositories.Interfaces;
 using TandVark.Domain.Models.Interfaces;
 using TandVark.Domain.Models;
 using System.ComponentModel.DataAnnotations;
+using TandVark.Domain.Services.Interfaces;
+using System.Net;
 
 namespace TandVark_ASP.NETCORE_REACT.Controllers
 {
     [Route("api/[controller]")]
     public class AuthenticationController : Controller
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserServices _userService;
 
-        public AuthenticationController(IUserRepository userRepository)
+        public AuthenticationController(IUserServices userService)
         {
-            _userRepository = userRepository;
+            _userService = userService;
         }
-
+    
         [HttpPost]
         [Route("{FromBody}")]
-        public UserAuthenticationResult AuthenticateUser([FromBody]User credentialsModel)
+        public async Task<IActionResult> AuthenticateUserAsync([FromBody]User credentialsModel)
         {
             try
             {
-                var authenticated = _userRepository.AuthenticateUser(credentialsModel);
-                if (authenticated)
-                    return new UserAuthenticationResult(authenticated, "Authenticated");
-                else
-                    return new UserAuthenticationResult(false, "Not authenticated") { Code = "0x003" };
+                if (credentialsModel.UserName == null)
+                    throw new ArgumentNullException($"Parameter {nameof(credentialsModel.UserName)} cannot be null", nameof(credentialsModel.UserName));
+                if (credentialsModel.PassWord == null)
+                    throw new ArgumentNullException($"Parameter {nameof(credentialsModel.PassWord)} cannot be null", nameof(credentialsModel.PassWord));
+
+                return Ok(await _userService.GetValueAsync(credentialsModel));
+
             }
-            catch (ArgumentException)
+            catch (ArgumentNullException argumentNullException)
             {
-                return new UserAuthenticationResult(false, "Not authenticated") { Code = "0x005" };
+                return StatusCode((int)HttpStatusCode.BadRequest, argumentNullException.Message);
+            }
+            catch (ArgumentException argumentException)
+            {
+                return StatusCode((int)HttpStatusCode.BadRequest, argumentException.Message);
+            }
+            catch (NullReferenceException nullReferenceException)
+            {
+                return StatusCode((int)HttpStatusCode.BadRequest, nullReferenceException.Message);
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, exception.Message);
             }
         }
 
-    }
-    public class UserAuthenticationResult
-    {
-        public bool Authenticated { get; private set; }
-        public string Message { get; private set; }
-
-        [MaxLength(5)]
-        public string Code { get; set; }
-
-        public UserAuthenticationResult(bool authenticated, string message)
-        {
-            Authenticated = authenticated;
-            Message = message;
-        }
     }
 }

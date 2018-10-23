@@ -10,7 +10,10 @@ using System.Collections.Generic;
 using TandVark_ASP.NETCORE_REACT.Controllers;
 
 using System.ComponentModel.DataAnnotations;
-
+using TandVark.Domain.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using TandVark.Domain.DTO;
 
 namespace TandVark.Test
 {
@@ -19,30 +22,32 @@ namespace TandVark.Test
         [Theory]
         [InlineData(true, null, "Authenticated")]          // Valid input
         [InlineData(false, "0x003", "Not authenticated")]
-        public void AuthenticateCard_ParameterizedInput_AuthenticationWillOnlyWorkWithValidInputAndCorrectErrorMessagesWillBeReturned(bool isValid, string errorCode, string message)
+        public async void AuthenticateCard_ParameterizedInput_AuthenticationWillOnlyWorkWithValidInputAndCorrectErrorMessagesWillBeReturned(bool isValid, string errorCode, string message)
         {
             //Arrange
-            
-            var expectedAuthenticationResult = isValid;
+            var expectedType = typeof(OkObjectResult);
+            var expectedStatusCode = (int)HttpStatusCode.OK;
+
             var expectedMessage = message;
             var expectedErrorCode = errorCode;
 
-            var fakeUser = A.Fake<User> ();
-            var fakeRepository = A.Fake<IUserRepository>();
+            var fakeUserInput = A.Fake<User>();
+            var fakeUserDTO = A.Fake<UserDTO> ();
+            var fakeService = A.Fake<IUserServices>();
 
 
-             A.CallTo(() => fakeRepository.AuthenticateUser(fakeUser)).Returns(expectedAuthenticationResult);
+             A.CallTo(() => fakeService.GetValueAsync(fakeUserInput)).Returns(fakeUserDTO);
               
 
-            var sut = new AuthenticationController(fakeRepository);
+            var sut = new AuthenticationController(fakeService);
 
             //Act
-            var result = sut.AuthenticateUser(fakeUser);
+            var result = await sut.AuthenticateUserAsync(fakeUserInput) as OkObjectResult;
 
             //Assert
-            Assert.Equal(expectedAuthenticationResult, result.Authenticated);
-            Assert.Equal(expectedMessage, result.Message);
-            Assert.Equal(expectedErrorCode, result.Code);
+            Assert.Equal(expectedType, result.GetType());
+            Assert.Equal(expectedStatusCode, result.StatusCode);
+            
         }
 
     }
