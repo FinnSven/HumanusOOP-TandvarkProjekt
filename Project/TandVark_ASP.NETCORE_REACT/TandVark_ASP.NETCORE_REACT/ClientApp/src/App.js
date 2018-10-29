@@ -11,7 +11,7 @@ export default class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currUser: { userName: "", userType: "" },
+            currUser: { userName: " ", userType: " " },
             active: false
         }
         this.HandleSetCurrUserandActiveState = this.HandleSetCurrUserandActiveState.bind(this);
@@ -36,15 +36,27 @@ export default class App extends Component {
             this.state.active
                 ?
                 this.state.currUser.userType === "Dentist"
-                    ? <Route path='/patient' component={PatientView} />
+                    ?
+                    <Route path='/patient' component={PatientView} />
                     :
                     <Route path='/booking' component={Booking} />
                 : <h1>Please log in</h1>
+
+        let nav =
+            this.state.active
+                ?
+                this.state.currUser.userType === "Dentist"
+                    ?
+                    { link: '/patient', title: 'Patient Details' }
+                    :
+                    { link: '/booking', title: 'Book Appointment' }
+
+                : {link: '', title: ''};
                 
 
 
     return (
-        <Layout currentUser={this.state.currUser} active={this.state.active}>
+        <Layout linksAndTitle={nav}>
             {contents}
             <Start logInHandler={this.HandleSetCurrUserandActiveState} currentUser={this.state.currUser} active={this.state.active} />
       </Layout>

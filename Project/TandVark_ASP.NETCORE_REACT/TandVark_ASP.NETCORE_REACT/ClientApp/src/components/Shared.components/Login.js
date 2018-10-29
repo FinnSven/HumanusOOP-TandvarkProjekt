@@ -39,7 +39,7 @@ export class Login extends Component {
 
         return ( 
             <div className="DMain">
-                <Login_Sub
+                <LoginSub
                     onLoginClick={this.handleLoginClick}
                 />
             </div>
@@ -49,7 +49,7 @@ export class Login extends Component {
 
 
 
-export class Login_Sub extends Component {
+export class LoginSub extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -69,7 +69,6 @@ export class Login_Sub extends Component {
         this.props.onLoginClick(credentials);
     }
     handleUserNameOnChange(e) {
-        console.log(e.target.value);
         this.setState({ userName: e.target.value });
     }
     handlePassWordOnChange(e) {

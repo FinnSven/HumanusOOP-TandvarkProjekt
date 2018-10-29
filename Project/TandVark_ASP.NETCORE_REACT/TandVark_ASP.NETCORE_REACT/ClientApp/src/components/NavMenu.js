@@ -5,11 +5,19 @@ import { LinkContainer } from 'react-router-bootstrap';
 import './NavMenu.css';
 
 export class NavMenu extends Component {
-    constructor(props) {
-        super(props);
-    }
-  displayName = NavMenu.name
+    
+    displayName = NavMenu.name
 
+    NavBarLink(props) {
+        return (
+        // Write a loop to cycle through all the nav links and titles.
+        <LinkContainer to={props.link} exact>
+            <NavItem>
+                {props.title}
+            </NavItem>    
+    </LinkContainer>
+    );
+}
     render() {
         
         
@@ -22,18 +30,14 @@ export class NavMenu extends Component {
           <Navbar.Toggle />
         </Navbar.Header>
             <Navbar.Collapse>
-                {
-
-                }
+              
           <Nav>
             <LinkContainer to={'/'} exact>
               <NavItem>
                 <Glyphicon glyph='home' /> Home
               </NavItem>
-                    </LinkContainer>
-
-                    
-                    
+            </LinkContainer>
+                    {this.NavBarLink(this.props.navLinksAndTitle)} 
           </Nav>
         </Navbar.Collapse>
       </Navbar>
