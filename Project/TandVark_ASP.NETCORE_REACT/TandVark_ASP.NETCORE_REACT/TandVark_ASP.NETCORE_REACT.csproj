@@ -27,8 +27,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\components\Dentist.components\Booking.js" />
+    <None Remove="ClientApp\src\components\Dentist.components\Booking.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TandVark.Data\TandVark.Data.csproj" />
     <ProjectReference Include="..\TandVark.Domain\TandVark.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\components\Receptionist.components\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -1,17 +1,17 @@
 ﻿import React, { Component } from 'react';
-import './Dentist.css';
+import '../Dentist.css';
 
 
 
-export class Dentist_Main extends Component {
+export class Login extends Component {
     constructor(props) {
         super(props);
-       
+        
+        this.handleLoginClick = this.handleLoginClick.bind(this);
     }
     handleLoginClick(credentials) {
 
-        console.log(credentials[0].userName);
-        console.log(credentials[0].passWord);
+        
 
         fetch("api/Authentication/AuthenticateUserAsync", {
             method: "Post",
@@ -28,15 +28,18 @@ export class Dentist_Main extends Component {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-            });
+                
+                this.props.onLogIn(data);
+            }
+            );
     }
+  
 
     render() {
 
         return ( 
             <div className="DMain">
-                <Dentist_Sub
+                <Login_Sub
                     onLoginClick={this.handleLoginClick}
                 />
             </div>
@@ -46,7 +49,7 @@ export class Dentist_Main extends Component {
 
 
 
-export class Dentist_Sub extends Component {
+export class Login_Sub extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -82,7 +85,7 @@ export class Dentist_Sub extends Component {
     render() {
 
         return (
-            <div className="DSub">
+            <div className="LoginSub">
 
                 <input type="text" value={this.state.userName} id="UserName" onChange={this.handleUserNameOnChange}/>
                 <input type="text" value={this.state.passWord} id="PassWord" onChange={this.handlePassWordOnChange}/>

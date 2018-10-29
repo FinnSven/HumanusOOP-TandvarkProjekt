@@ -1,21 +1,52 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
-import { Dentist_Main } from './components/Dentist_Main';
+import { Start } from './components/Shared.components/Start';
+import { PatientView } from './components/Dentist.components/PatientView';
+import { Booking } from './components/Shared.components/Booking';
+
+
 
 export default class App extends Component {
-  displayName = App.name
+    constructor(props) {
+        super(props)
+        this.state = {
+            currUser: { userName: "", userType: "" },
+            active: false
+        }
+        this.HandleSetCurrUserandActiveState = this.HandleSetCurrUserandActiveState.bind(this);
+    }
+    displayName = App.name
 
-  render() {
+    HandleSetCurrUserandActiveState(User) {
+
+        this.setState({
+            currUser: User,
+            active: true
+        }
+        );
+
+        console.log(this.state.currUser);
+    }
+
+    
+
+    render() {
+        let contents =
+            this.state.active
+                ?
+                this.state.currUser.userType === "Dentist"
+                    ? <Route path='/patient' component={PatientView} />
+                    :
+                    <Route path='/booking' component={Booking} />
+                : <h1>Please log in</h1>
+                
+
+
     return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetchdata' component={FetchData} />
-        <Route path='/dentist_Main' component={Dentist_Main}/>
+        <Layout currentUser={this.state.currUser} active={this.state.active}>
+            {contents}
+            <Start logInHandler={this.HandleSetCurrUserandActiveState} currentUser={this.state.currUser} active={this.state.active} />
       </Layout>
     );
   }
