@@ -24,7 +24,7 @@ namespace TandVark_ASP.NETCORE_REACT.Controllers
 
         [HttpPost]
         [Route("{FromBody}")]
-        public Task<OkObjectResult> ValidatePatientAsync[FromBody] Patient credentialsModel)
+        public Task<OkObjectResult> ValidatePatientAsync([FromBody] private readonly Patient credentialsModel)
         {
 
              try

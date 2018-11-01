@@ -4,11 +4,11 @@ using System.Text;
 
 namespace TandVark.Domain.Models
 {
-    public class Patient
+    public class Patient : IPatient
     {
         
         public string Ssnumber { get; set; }
-
+        public object UserName { get; set; }
 
         public Patient(string _ssnumber)
         {
