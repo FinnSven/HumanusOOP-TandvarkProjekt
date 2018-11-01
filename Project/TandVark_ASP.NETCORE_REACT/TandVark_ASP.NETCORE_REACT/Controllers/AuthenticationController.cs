@@ -25,7 +25,7 @@ namespace TandVark_ASP.NETCORE_REACT.Controllers
     
         [HttpPost]
         [Route("{FromBody}")]
-        public async Task<IActionResult> AuthenticateUserAsync([FromBody]User credentialsModel)
+        public async Task<IActionResult> AuthenticateUserAsync([FromBody]Patient credentialsModel)
         {
             try
             {

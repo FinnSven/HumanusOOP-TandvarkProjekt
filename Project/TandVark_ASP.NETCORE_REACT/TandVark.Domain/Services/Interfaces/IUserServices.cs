@@ -6,6 +6,6 @@ namespace TandVark.Domain.Services.Interfaces
 {
     public interface IUserServices
     {
-        Task<UserDTO> GetValueAsync(User _User);
+        Task<UserDTO> GetValueAsync(Patient _User);
     }
 }

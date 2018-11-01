@@ -9,14 +9,14 @@ namespace TandVark.Domain.Services
 {
     public class UserServices : IUserServices
     {
-        private readonly IUserRepository _iUserRepository;
+        private readonly IPatientRepository _iUserRepository;
 
-        public UserServices(IUserRepository iUserRepository)
+        public UserServices(IPatientRepository iUserRepository)
         {
             _iUserRepository = iUserRepository;
         }
 
-        public async Task<UserDTO> GetValueAsync(User _User)
+        public async Task<UserDTO> GetValueAsync(Patient _User)
         {
             var value = await _iUserRepository.GetUserAsync(_User.UserName);
 

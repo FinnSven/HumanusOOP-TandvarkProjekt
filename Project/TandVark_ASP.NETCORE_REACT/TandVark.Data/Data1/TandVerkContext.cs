@@ -17,7 +17,7 @@ namespace TandVark.Data.Data1
         {
         }
 
-        public virtual DbSet<TblUser> TblUsers { get; set; }
+        public virtual DbSet<TblUser> TblPatient { get; set; }
         public virtual DbSet<TblUserType> TblUserTypes { get; set; }
 
     }

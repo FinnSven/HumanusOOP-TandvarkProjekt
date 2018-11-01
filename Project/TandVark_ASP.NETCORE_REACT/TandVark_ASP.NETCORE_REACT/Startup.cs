@@ -30,8 +30,8 @@ namespace TandVark_ASP.NETCORE_REACT
         {
             services.AddDbContext<TandVerkContext>(options => options.UseSqlServer("Data Source=LAPTOP-TU1UMOIC\\SQLEXPRESS;Initial Catalog=TandVerk;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
             services.AddScoped<IUserServices, UserServices>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IUser, User>();
+            services.AddScoped<IPatientRepository, UserRepository>();
+            services.AddScoped<IUser, Patient>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // In production, the React files will be served from this directory

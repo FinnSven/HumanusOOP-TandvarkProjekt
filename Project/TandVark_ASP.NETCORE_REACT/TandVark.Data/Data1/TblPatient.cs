@@ -6,16 +6,18 @@ using System.Text;
 
 namespace TandVark.Data.Data1
 {
-    public class TblUser
+    public class TblPatient
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FldId { get; set; }
-        public string FldAccountName { get; set; }
-        public string FldPassword { get; set; }
+        public string FldFirstName { get; set; }
+        public string FldLastName { get; set; }
+        public int? FldSsnumber { get; set; }
+        public string FldAddress { get; set; }
+        public string FldPhoneId { get; set; }
+        public string FldEmail { get; set; }
 
-        [ForeignKey("UserTypeId")]
-        public virtual TblUserType FldUserType { get; set; }
-        public object FldSsnumber { get; set; }
     }
 }

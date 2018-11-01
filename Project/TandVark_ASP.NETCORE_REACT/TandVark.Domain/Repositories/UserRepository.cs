@@ -5,7 +5,7 @@ using TandVark.Data.Data1;
 
 namespace TandVark.Domain.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : IPatientRepository
     {
         private readonly TandVerkContext _tandVardContext;
 

@@ -31,7 +31,7 @@ namespace TandVark.Test
             var expectedMessage = message;
             var expectedErrorCode = errorCode;
 
-            var fakeUserInput = A.Fake<User>();
+            var fakeUserInput = A.Fake<Patient>();
             var fakeUserDTO = A.Fake<UserDTO> ();
             var fakeService = A.Fake<IUserServices>();
 
