@@ -7,7 +7,7 @@ namespace TandVark.Domain.Models
    public class AppointmentTypes
     {
         public int AppointmentID { get; set; }
-        public string MyProperty { get; set; }
+        public string AppointmentType { get; set; }
 
     }
 }
