@@ -29,8 +29,8 @@ namespace TandVark_ASP.NETCORE_REACT.Controllers
         {
             try
             {
-                if (credentialsModel.UserName == null)
-                    throw new ArgumentNullException($"Parameter {nameof(credentialsModel.UserName)} cannot be null", nameof(credentialsModel.UserName));
+                if (credentialsModel.SSNumber == null)
+                    throw new ArgumentNullException($"Parameter {nameof(credentialsModel.SSNumber)} cannot be null", nameof(credentialsModel.SSNumber));
                 if (credentialsModel.PassWord == null)
                     throw new ArgumentNullException($"Parameter {nameof(credentialsModel.PassWord)} cannot be null", nameof(credentialsModel.PassWord));
 

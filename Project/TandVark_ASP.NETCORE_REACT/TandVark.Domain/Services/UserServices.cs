@@ -18,13 +18,13 @@ namespace TandVark.Domain.Services
 
         public async Task<UserDTO> GetValueAsync(User _User)
         {
-            var value = await _iUserRepository.GetUserAsync(_User.UserName);
+            var value = await _iUserRepository.GetUserAsync(_User.SSNumber);
 
             if (value == null)
             {
                 throw new NullReferenceException("User does not exist");
             }
-            else if (_User.UserName == value.FldAccountName && _User.PassWord == value.FldPassword)
+            else if (_User.SSNumber == value.FldAccountName && _User.PassWord == value.FldPassword)
             {
                 var User = new UserDTO { UserName = value.FldAccountName, UserType = value.FldUserType.FldEmployeeTypeName };
                 return User;

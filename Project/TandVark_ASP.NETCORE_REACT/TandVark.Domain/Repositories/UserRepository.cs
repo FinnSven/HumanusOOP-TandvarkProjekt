@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using TandVark.Data.Data1;
+using TandVark.Data.Data1.DataLatHund;
 
 namespace TandVark.Domain.Repositories
 {

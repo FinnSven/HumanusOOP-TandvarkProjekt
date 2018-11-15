@@ -1,24 +1,27 @@
-﻿//using System;
-//using Microsoft.EntityFrameworkCore;
-//using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-//namespace TandVark.Domain.DataLatHund
-//{
-//    public partial class TandVardContext : DbContext
-//    {
-//        public TandVardContext()
-//        {
-//        }
+namespace TandVark.Domain.DataLatHund
+{
+    public partial class TandVardContext : DbContext
+    {
+        public TandVardContext()
+        {
+        }
 
-//        public TandVardContext(DbContextOptions<TandVardContext> options)
-//            : base(options)
-//        {
-//        }
+        public TandVardContext(DbContextOptions<TandVardContext> options)
+            : base(options)
+        {
+        }
+        public virtual DbSet<TblPatient> TblPatients { get; set; }
+    }
+}
 
 //        public virtual DbSet<TblDentistAppointment> TblDentistAppointment { get; set; }
 //        public virtual DbSet<TblEmployee> TblEmployee { get; set; }
 //        public virtual DbSet<TblEmployeeType> TblEmployeeType { get; set; }
-//        public virtual DbSet<TblPatient> TblPatient { get; set; }
+//       
 //        public virtual DbSet<TblXray> TblXray { get; set; }
 
 //        // Unable to generate entity type for table 'dbo.tbl_AppointmentToXray'. Please see the warning messages.

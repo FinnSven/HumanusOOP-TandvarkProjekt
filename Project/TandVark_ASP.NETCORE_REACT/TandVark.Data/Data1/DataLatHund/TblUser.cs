@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace TandVark.Data.Data1
+namespace TandVark.Data.Data1.DataLatHund
 {
     public class TblUser
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FldId { get; set; }

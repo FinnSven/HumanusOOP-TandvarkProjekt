@@ -32,6 +32,10 @@ namespace TandVark_ASP.NETCORE_REACT
             services.AddScoped<IUserServices, UserServices>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUser, User>();
+
+            services.AddScoped<IPatientServices, PatientServices>();
+            services.AddScoped<IPatientRepository, PatientRepository>();
+            services.AddScoped<IPatient, Patient>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // In production, the React files will be served from this directory
