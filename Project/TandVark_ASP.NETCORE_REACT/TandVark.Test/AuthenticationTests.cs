@@ -20,9 +20,9 @@ namespace TandVark.Test
     public class TandVarkTests
     {
         [Theory]
-        [InlineData(true, null, "Authenticated")]          // Valid input
-        [InlineData(false, "0x003", "Not authenticated")]
-        public async void AuthenticateCard_ParameterizedInput_AuthenticationWillOnlyWorkWithValidInputAndCorrectErrorMessagesWillBeReturned(bool isValid, string errorCode, string message)
+        [InlineData(null, "Authenticated")]          // Valid input
+        [InlineData("0x003", "Not authenticated")]
+        public async void AuthenticateCard_ParameterizedInput_AuthenticationWillOnlyWorkWithValidInputAndCorrectErrorMessagesWillBeReturned(string errorCode, string message)
         {
             //Arrange
             var expectedType = typeof(OkObjectResult);
@@ -30,9 +30,11 @@ namespace TandVark.Test
 
             var expectedMessage = message;
             var expectedErrorCode = errorCode;
+
+            var fakeUserInput = A.Fake<User>();
             fakeUserInput.UserName = "U1";
             fakeUserInput.PassWord = "1234";
-            var fakeUserInput = A.Fake<User>();
+            
             var fakeUserDTO = A.Fake<UserDTO> ();
             var fakeService = A.Fake<IUserServices>();
 
