@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TandVark.Domain.DTO
 {
-    class PatientDTO
+    public class PatientDTO
     {
         public string SSNumber { get; set; }
     }
