@@ -30,7 +30,8 @@ namespace TandVark.Test
 
             var expectedMessage = message;
             var expectedErrorCode = errorCode;
-
+            fakeUserInput.UserName = "U1";
+            fakeUserInput.PassWord = "1234";
             var fakeUserInput = A.Fake<User>();
             var fakeUserDTO = A.Fake<UserDTO> ();
             var fakeService = A.Fake<IUserServices>();
