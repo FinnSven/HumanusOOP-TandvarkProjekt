@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B3540F0F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TandVark.IntegrationTest", "TandVark.IntegrationTest\TandVark.IntegrationTest.csproj", "{E84F60DB-079D-4548-8A60-49391DC42E5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TandVark.Data", "TandVark.Data\TandVark.Data.csproj", "{98895A61-22C3-4524-A208-D9B0658834ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TandVark.Data", "TandVark.Data\TandVark.Data.csproj", "{98895A61-22C3-4524-A208-D9B0658834ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TandVarkSQL", "TandVarkSQL\TandVarkSQL.csproj", "{492F93B7-3D1B-4F69-81C4-6DA2984FE642}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{98895A61-22C3-4524-A208-D9B0658834ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98895A61-22C3-4524-A208-D9B0658834ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98895A61-22C3-4524-A208-D9B0658834ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492F93B7-3D1B-4F69-81C4-6DA2984FE642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492F93B7-3D1B-4F69-81C4-6DA2984FE642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492F93B7-3D1B-4F69-81C4-6DA2984FE642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492F93B7-3D1B-4F69-81C4-6DA2984FE642}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

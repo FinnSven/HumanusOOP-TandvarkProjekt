@@ -1,0 +1,35 @@
+﻿<Window x:Class="TandVarkSQL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TandVarkSQL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <DataGrid x:Name="tandVarkDBDataGrid" x:FieldModifier="public" AutoGenerateColumns="False" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding FldId}" />
+                <DataGridTextColumn Header="Account name" Binding="{Binding FldAccountName}" />
+                <DataGridTextColumn Header="Password" Binding="{Binding FldPassword}" />
+                <DataGridTextColumn Header="User type Id" Binding="{Binding UserTypeId}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Action" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="addAccountAddBtn" Content="Add" Click="addAccountAddBtn_Click" />
+                                <Button x:Name="editAccountAddBtn" Content="Edit" Click="editAccountAddBtn_Click" />
+                                <Button x:Name="deleteAccountDeleteBtn" Content="Delete" Click="deleteAccountDeleteBtn_Click" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>
