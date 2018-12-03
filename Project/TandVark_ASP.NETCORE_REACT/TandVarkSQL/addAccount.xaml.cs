@@ -29,17 +29,29 @@ namespace TandVarkSQL
 
         private void addAccountAddBtn_Click(object sender, RoutedEventArgs e)
         {
-            TblUser Account = new TblUser()
+            if (String.IsNullOrEmpty(addAccountUserIdTxtBox.Text))
             {
-                FldAccountName = addAccountNameTxtBox.Text,
-                FldPassword = addAccountPasswordTxtBox.Text,
-                UserTypeId = Convert.ToInt32(addAccountUserIdTxtBox.Text)
-            };
+                MessageBox.Show("ERROR! Please enter Name");
+            }
 
-            TandDB.TblUsers.Add(Account);
-            TandDB.SaveChanges();
-            MainWindow.datagrid.ItemsSource = TandDB.TblUsers.ToList();
-            this.Hide();
+            else
+            {
+
+                TblUser Account = new TblUser()
+                {
+                    FldAccountName = addAccountNameTxtBox.Text,
+                    FldPassword = addAccountPasswordTxtBox.Text,
+                    UserTypeId = Convert.ToInt32(addAccountUserIdTxtBox.Text)
+                };
+                if (Validator.IsValid(Account))
+                {
+                    TandDB.TblUsers.Add(Account);
+                    TandDB.SaveChanges();
+                    MainWindow.datagrid.ItemsSource = TandDB.TblUsers.ToList();
+                    this.Hide();
+                }
+            }
+
         }
     }
 }
