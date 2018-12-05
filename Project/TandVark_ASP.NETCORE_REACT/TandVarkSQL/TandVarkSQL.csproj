@@ -85,6 +85,7 @@
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Validator.cs" />
+    <Compile Include="ValidatorInt.cs" />
     <Page Include="addAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

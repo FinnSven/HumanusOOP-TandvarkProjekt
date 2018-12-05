@@ -12,19 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace TandVarkSQL
 {
-    class Validator
-    {//Work in progress! Herate Mich! 
-        private class isValid
+    class Validator 
+    {// Work in progress! Herate Mich! å
+
+        public ValidationResult Validate
+      (String value)
+
         {
-            FldAccountName
-            FldPassword
-            UserTypeId
+            
+            {
+                if (value == null)
+                    return new ValidationResult(false, "value cannot be empty.");
+                else
+                {
+                    if (value.ToString().Length < 5)
+                        return new ValidationResult
+                        (false, "Input cannot be less than 5 characters long.");
+                }
+                return ValidationResult.ValidResult;
 
+                
 
+            }
         }
-
-        
     }
 }

@@ -29,13 +29,25 @@ namespace TandVarkSQL
 
         private void addAccountAddBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(addAccountUserIdTxtBox.Text))
+            if (!new Validator().Validate(addAccountNameTxtBox.Text).IsValid)
             {
                 MessageBox.Show("ERROR! Please enter Name");
+                return; 
+            }
+            if (!new Validator().Validate(addAccountPasswordTxtBox.Text).IsValid)
+            {
+                MessageBox.Show("ERROR! Please enter valid password");
+                return;
+            }
+            if (!new ValidatorInt().Validate(addAccountUserIdTxtBox.Text).IsValid)
+            {
+                MessageBox.Show("Error! Please Enter Valid User ID Number");
+                return;
             }
 
-            else
-            {
+
+            
+
 
                 TblUser Account = new TblUser()
                 {
@@ -43,14 +55,24 @@ namespace TandVarkSQL
                     FldPassword = addAccountPasswordTxtBox.Text,
                     UserTypeId = Convert.ToInt32(addAccountUserIdTxtBox.Text)
                 };
-                if (Validator.IsValid(Account))
+                if (new Validator().Validate(Account.FldAccountName).IsValid)
+                    
+                    
                 {
                     TandDB.TblUsers.Add(Account);
                     TandDB.SaveChanges();
                     MainWindow.datagrid.ItemsSource = TandDB.TblUsers.ToList();
                     this.Hide();
                 }
-            }
+                
+
+                
+                
+                
+
+
+
+            
 
         }
     }
