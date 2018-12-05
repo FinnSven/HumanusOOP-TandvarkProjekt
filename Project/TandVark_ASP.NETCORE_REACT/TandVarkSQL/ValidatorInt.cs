@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 
 namespace TandVarkSQL
 {
-    class ValidatorInt
+    public class ValidatorInt
 
     {
         public ValidationResult Validate(string value)

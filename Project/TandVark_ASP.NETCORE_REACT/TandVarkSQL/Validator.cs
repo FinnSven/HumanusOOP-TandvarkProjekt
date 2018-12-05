@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace TandVarkSQL
 {
-    class Validator 
+    public class Validator 
     {// Work in progress! Herate Mich! å
 
         public ValidationResult Validate
